@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <title> Todo Application</title>
+
+        <link rel="stylesheet" href="style.css" th:href="@{/css/bootstrap-4.4.1-dist/css/booystrap.min.css}">
+
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div><h2><a class="navbar-brand" href="#">O'possible</a></h2></div>
+                <div class="collapse navbar-collapse " id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">SignUp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/add2" tabindex="-1" aria-disabled="true">Add Task</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/taskList" tabindex="-1" aria-disabled="true">View Task</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <form class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main">
+
+            <div id="main-div">
+                <h1>PLAN YOUR DAY</h1>
+                <blockquote>...Its only your certain ticket</blockquote>
+                <p>Nobody lives without a plan...though it might be a plan to Fail...yet is a PLAN </p>
+                <h3>Hurray!!!...We are here to help you out!</h3>
+            </div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2020 O'possible, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </body>
+
+</html>
