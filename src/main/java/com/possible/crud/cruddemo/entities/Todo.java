@@ -34,6 +34,14 @@ public class Todo {
         return updatedAt;
     }
 
+    public Todo() {
+    }
+
+    public Todo( String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
     public String getId() {
         return id;
     }
