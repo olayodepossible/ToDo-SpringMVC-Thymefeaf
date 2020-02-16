@@ -34,6 +34,14 @@ public class Todo {
         return updatedAt;
     }
 
+    public Todo() {
+    }
+
+    public Todo( String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
     public String getId() {
         return id;
     }
@@ -84,7 +92,7 @@ public Date convertToDateViaInstant(LocalDate dateToConvert) {
 
     @Override
     public String toString() {
-        return "Todos{" +
+        return "Todo{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +

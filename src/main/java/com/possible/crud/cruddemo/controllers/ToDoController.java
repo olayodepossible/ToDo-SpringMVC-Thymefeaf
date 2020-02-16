@@ -22,20 +22,14 @@ public class ToDoController {
     }
 
 
-    @GetMapping(path = "/add") //This is to re-direct
+    @GetMapping(path = "/add")
     public String addTask(Model model) {
         Todo task = new Todo();
         model.addAttribute("todo", task);
         return "addTodo";
     }
-    @GetMapping(path = "/add2") //This is to re-direct
-    public String addTask2(Model model) {
-        Todo task = new Todo();
-        model.addAttribute("todo", task);
-        return "addTodo";
-    }
 
-    @PostMapping(path = "/taskList")
+    @PostMapping(path = "/addtask")
     public String addToDo(@Valid Todo task, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "addTodo";
@@ -43,7 +37,7 @@ public class ToDoController {
 
         toDoRepository.save(task);
         model.addAttribute("tasks", toDoRepository.findAll());
-        return "taskList";
+        return "redirect:/taskList";
     }
 
     @GetMapping(path = "/taskList")
@@ -60,7 +54,7 @@ public class ToDoController {
     }
 
     @PostMapping(path = "/update/{id}")
-    public String updateUser(@PathVariable("id") String id, @Valid Todo task, BindingResult result, Model model) {
+    public String updateTask(@PathVariable("id") String id, @Valid Todo task, BindingResult result, Model model) {
         if (result.hasErrors()) {
             task.setId(id);
             return "updateTask";
@@ -72,7 +66,7 @@ public class ToDoController {
     }
 
     @GetMapping(path = "/delete/{id}")
-    public String deleteUser(@PathVariable("id") String id, Model model) {
+    public String deleteTask(@PathVariable("id") String id, Model model) {
         Todo task = toDoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         toDoRepository.delete(task);
         model.addAttribute("users", toDoRepository.findAll());
