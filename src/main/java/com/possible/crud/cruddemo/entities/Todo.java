@@ -92,7 +92,7 @@ public Date convertToDateViaInstant(LocalDate dateToConvert) {
 
     @Override
     public String toString() {
-        return "Todos{" +
+        return "Todo{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +

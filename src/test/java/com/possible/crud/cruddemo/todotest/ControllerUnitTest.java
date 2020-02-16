@@ -30,14 +30,14 @@ public class ControllerUnitTest {
         }
 
         @Test
-        public void whenCalledshowAddTaskForm_thenCorrect() {
+        public void whenCalledShowAddTaskForm_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             assertThat(toDoController.addTask(mockedModel)).isEqualTo("addTodo");
         }
 
         @Test
-        public void whenCalledaddTask() {
+        public void whenCalledAddTask() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             when(mockedBindingResult.hasErrors()).thenReturn(false);
@@ -46,7 +46,7 @@ public class ControllerUnitTest {
         }
 
         @Test
-        public void whenCalledaddTaskAndInValidUser_thenCorrect() {
+        public void whenCalledAddTaskAndInValidUser_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             when(mockedBindingResult.hasErrors()).thenReturn(true);
@@ -55,12 +55,12 @@ public class ControllerUnitTest {
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void whenCalledshowUpdateForm_thenIllegalArgumentException() {
+        public void whenCalledShowUpdateForm_thenIllegalArgumentException() {
             assertThat(toDoController.showUpdateForm("ff8080817049827a017049827d720000", mockedModel)).isNotEqualTo("updateTask");
         }
 
         @Test
-        public void whenCalledupdateTaskAndValidUser_thenCorrect() {
+        public void whenCalledUpdateTaskAndValidUser_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             when(mockedBindingResult.hasErrors()).thenReturn(false);
@@ -69,7 +69,7 @@ public class ControllerUnitTest {
         }
 
         @Test
-        public void whenCalledupdateUserAndInValidUser_thenCorrect() {
+        public void whenCalledUpdateTaskAndInValidUser_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             when(mockedBindingResult.hasErrors()).thenReturn(true);
@@ -78,7 +78,7 @@ public class ControllerUnitTest {
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void whenCalleddeleteUser_thenIllegalArgumentException() {
+        public void whenCalledDeleteUser_thenIllegalArgumentException() {
             assertThat(toDoController.deleteTask("ff8080817049827a017049827d720000", mockedModel)).isEqualTo("taskList");
         }
 

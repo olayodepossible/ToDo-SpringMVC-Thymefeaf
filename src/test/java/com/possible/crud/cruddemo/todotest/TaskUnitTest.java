@@ -8,21 +8,21 @@ import org.junit.Test;
 
 public class TaskUnitTest {
         @Test
-        public void whenCalledGetName_thenCorrect() {
+        public void whenCalledGetTitle_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             assertThat(task.getTitle()).isEqualTo("Gim");
         }
 
         @Test
-        public void whenCalledGetEmail_thenCorrect() {
+        public void whenCalledGetDescription_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             assertThat(task.getDescription()).isEqualTo("Time to Exercise");
         }
 
         @Test
-        public void whenCalledSetName_thenCorrect() {
+        public void whenCalledSetTitle_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             task.setTitle("Code");
@@ -31,7 +31,7 @@ public class TaskUnitTest {
         }
 
         @Test
-        public void whenCalledSetEmail_thenCorrect() {
+        public void whenCalledSetDescription_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
 
             task.setDescription("We are Coding now");
@@ -42,7 +42,7 @@ public class TaskUnitTest {
         @Test
         public void whenCalledToString_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
-            assertThat(task.toString()).isEqualTo("Todos{id=null, title='Gim', description='Time to Exercise', taskStatus='null', createdAt=null, updatedAt=null}");
+            assertThat(task.toString()).isEqualTo("Todo{id=null, title='Gim', description='Time to Exercise', taskStatus='null', createdAt=null, updatedAt=null}");
         }
 
 }
