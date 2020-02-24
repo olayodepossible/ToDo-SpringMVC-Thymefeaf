@@ -2,16 +2,19 @@ package com.possible.crud.cruddemo;
 
 import com.possible.crud.cruddemo.entities.Todo;
 import com.possible.crud.cruddemo.repository.ToDoRepository;
+import com.possible.crud.cruddemo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 public class CrudDemoApplication implements CommandLineRunner {
 
     private ToDoRepository toDoRepository;
@@ -48,7 +51,6 @@ public class CrudDemoApplication implements CommandLineRunner {
         task3.setTitle("Breakfast");
         task3.setDescription("Going to Eat");
         task3.setTaskStatus("Pending");
-
         toDoRepository.save(task1);
         toDoRepository.save(task2);
         toDoRepository.save(task3);

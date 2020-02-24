@@ -25,6 +25,12 @@
                         </li>
 
                     </ul>
+
+<!--                    <div class="logout">
+                        <form class="form-inline my-2 my-lg-0" method="post" th:action="@{/logout}">
+                            <button class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit" >Logout</button>
+                        </form>
+                    </div>-->
                 </div>
 
                 <div>
@@ -40,7 +46,7 @@
                 <h2 class="mb-5">New Task</h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="#" th:action="@{/addtask}" th:object="${todo}" method="post">
+                        <form action="#" th:action="@{/addTask}" th:object="${todo}" method="post">
                             <div class="row">
                                 <div class="form-group col-md-10">
                                     <label for="title"  class="col-form-label">Task Title</label>

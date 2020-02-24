@@ -3,9 +3,10 @@ package com.possible.crud.cruddemo.entities;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -21,16 +22,19 @@ public class Todo {
     private String taskStatus;
 
     @CreationTimestamp
-    private java.sql.Timestamp createdAt;
+    @CreatedDate
+    private java.sql.Date createdAt;
+
 
     @UpdateTimestamp
-    private java.sql.Timestamp updatedAt;
+    @LastModifiedDate
+    private Date updatedAt;
 
-    public Timestamp getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public Timestamp getUpdatedAt() {
+    public Date getUpdatedAt() {
         return updatedAt;
     }
 
@@ -93,12 +97,8 @@ public Date convertToDateViaInstant(LocalDate dateToConvert) {
     @Override
     public String toString() {
         return "Todo{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
+                "title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", taskStatus='" + taskStatus + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

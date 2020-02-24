@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -21,23 +19,11 @@ public class ToDoController {
         this.toDoRepository = toDoRepository;
     }
 
-
     @GetMapping(path = "/add")
     public String addTask(Model model) {
         Todo task = new Todo();
         model.addAttribute("todo", task);
         return "addTodo";
-    }
-
-    @PostMapping(path = "/addtask")
-    public String addToDo(@Valid Todo task, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return "addTodo";
-        }
-
-        toDoRepository.save(task);
-        model.addAttribute("tasks", toDoRepository.findAll());
-        return "redirect:/taskList";
     }
 
     @GetMapping(path = "/taskList")
@@ -53,7 +39,18 @@ public class ToDoController {
         return "updateTask";
     }
 
-    @PostMapping(path = "/update/{id}")
+    @PostMapping(path = "/addTask")
+    public String addToDo(@Valid Todo task, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "addTodo";
+        }
+
+        toDoRepository.save(task);
+        model.addAttribute("tasks", toDoRepository.findAll());
+        return "redirect:/taskList";
+    }
+
+    @PutMapping(path = "/update/{id}")
     public String updateTask(@PathVariable("id") String id, @Valid Todo task, BindingResult result, Model model) {
         if (result.hasErrors()) {
             task.setId(id);

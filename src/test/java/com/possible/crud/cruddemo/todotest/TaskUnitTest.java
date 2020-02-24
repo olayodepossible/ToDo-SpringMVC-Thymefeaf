@@ -42,7 +42,7 @@ public class TaskUnitTest {
         @Test
         public void whenCalledToString_thenCorrect() {
             Todo task = new Todo("Gim", "Time to Exercise");
-            assertThat(task.toString()).isEqualTo("Todo{id=null, title='Gim', description='Time to Exercise', taskStatus='null', createdAt=null, updatedAt=null}");
+            assertThat(task.toString()).isEqualTo("Todo{title='Gim', description='Time to Exercise'}");
         }
 
 }

@@ -19,16 +19,27 @@ body {
 }
 nav{
     display: flex;
-    justify-content: space-between;
-}
 
+}
+.navbar {
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+header .logout{
+    margin: 2em;
+}
  li{
      display: inline-block;
      font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
      list-style: none;
      margin-left: 5em;
+     list-style: none;
  }
+
 
 .container{
     margin-top: 10em;
 }
+
